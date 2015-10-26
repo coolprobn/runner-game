@@ -1,17 +1,17 @@
 	
 	var $gameWindow = document.getElementById('game-window');
 	var $player = document.getElementById('player');
-	$player.style.bottom = 50 + 'px';
+	$player.style.bottom = 53+ 'px';
     $player.style.left = 30 + 'px';
     var posBottom = 0;
-
+    var count = 0;
 	var jumpUp = function(){
 		posBottom = 150;
 	    $player.style.bottom = posBottom + 'px';
 	};
 	
 	var jumpDown = function(){
-		posBottom = 50;
+		posBottom = 53;
         $player.style.bottom = posBottom + 'px';
 	};
 
@@ -33,17 +33,17 @@
     var $road = document.getElementById('road');
     var posRight = -100000;
 
-    var animate = function(){
+    var animateRoad = function(){
 		posRight += 10;
 		$road.style.right = posRight + 'px';
 		$gameWindow.appendChild($road);
 	};
 
-	setInterval(animate, 100);  
+	setInterval(animateRoad, 100);  
 
 	var $enemy = document.createElement('div');	
     $enemy.id = 'enemy';
-    $enemy.style.bottom = 50 + 'px';
+    $enemy.style.bottom = 53 + 'px';
     var move = 570;
     var intervalId;
     var spawnEnemy = function(){
@@ -74,12 +74,24 @@
     	var playerRight = parseInt($player.style.left) + 30;
     	var enemyLeft = parseInt(enemy.style.left);
     	var playerLeft = parseInt($player.style.left);
-
 		/*if(playerRight>=enemyLeft&&playerRight>enemyLeft&&playerTop<enemyBottom&&playerBottom>=enemyTop){
 			console.log("game over");
 			
 		}*/
-        if(playerRight >= enemyLeft && playerTop == enemyTop && playerBottom == enemyBottom || playerRight >= enemyLeft && playerBottom <= enemyTop){
+        if(playerRight >= enemyLeft && playerTop == enemyTop && playerBottom == enemyBottom || playerLeft >= enemyLeft && playerBottom <= enemyTop){
             console.log("game over");
+            count = 0;
+        }else{
+            scoreCount();
         };
 	};
+    
+   var $scoreWindow = document.getElementById('score-window'); 
+   var $score = document.getElementById('score');
+   
+   var scoreCount = function(){
+       count += 10;
+       $score.innerHTML = count;
+       $scoreWindow.appendChild($score);
+
+   };

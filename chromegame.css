@@ -10,31 +10,54 @@
 }
 
 #player {
-	height: 50px;
-	width: 30px;
+	height: 30px;
+	width: 20px;
 	border: 1px solid black;
     bottom: 50px; 
 	left: 30px;
 	position: absolute;
-	background: white;
+	background: grey;
 	z-index: 10;
 }
 
 #enemy {
-	height: 50px;
-	width: 30px;
+	height: 30px;
+	width: 20px;
 	left: 600px;
 	border: 1px solid black;
     bottom: 50px;
 	position: absolute;
-	background: white;
+	background: red;
 	z-index: 10;
 }
 
 #road {
-	background: url("track.jpg");
+	background: url("capture.jpg");
 	position: absolute;
+	background-size: 1000px 305px;
 	height: 305px;
 	width: 1000000px;
 	top: 0;
+}
+
+#score-window{
+	height: 30px;
+	width: 130px;
+	left: 480px;
+	position: absolute;
+	z-index: 10;
+}
+
+.score-label {
+	font: italic bold 12px/30px Georgia, serif;
+	width: 50px;
+	text-align: center;
+	display: inline-block;
+}
+
+#score {
+	font: bold 12px/30px Georgia, serif;
+	width: 70px;
+	text-align: left;
+	display: inline-block;
 }
