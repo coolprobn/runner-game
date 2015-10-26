@@ -40,6 +40,19 @@
 	top: 0;
 }
 
+#life {
+	height: 20px;
+	width: 72px;
+	position: absolute;
+    left: 10px;
+    top: 10px;
+	z-index: 10;
+	background: url(life.JPG);
+	background-size: 72px 20px;
+	overflow: hidden;
+
+}
+
 #score-window{
 	height: 30px;
 	width: 130px;
